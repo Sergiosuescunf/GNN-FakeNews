@@ -13,8 +13,8 @@ from torch_geometric.nn import GCNConv
 from torch_geometric.data import DataLoader, DataListLoader
 from torch_geometric.nn import DataParallel
 
-from data_loader import *
-from eval_helper import *
+from utils.data_loader import *
+from utils.eval_helper import *
 
 """
 
@@ -25,7 +25,6 @@ Link: https://arxiv.org/pdf/2001.06362.pdf
 Source Code: https://github.com/TianBian95/BiGCN
 
 """
-
 
 class TDrumorGCN(torch.nn.Module):
 	def __init__(self, in_feats, hid_feats, out_feats):
@@ -134,7 +133,7 @@ def compute_test(loader, verbose=False):
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--seed', type=int, default=777, help='random seed')
-parser.add_argument('--device', type=str, default='cuda:0', help='specify cuda devices')
+parser.add_argument('--device', type=str, default='cpu', help='specify cuda devices')
 # hyper-parameters
 parser.add_argument('--dataset', type=str, default='politifact', help='[politifact, gossipcop]')
 parser.add_argument('--batch_size', type=int, default=128, help='batch size')

@@ -9,8 +9,8 @@ import torch_geometric.transforms as T
 from torch_geometric.nn import DenseSAGEConv, dense_diff_pool
 from torch.utils.data import random_split
 
-from data_loader import *
-from eval_helper import *
+from utils.data_loader import *
+from utils.eval_helper import *
 
 """
 

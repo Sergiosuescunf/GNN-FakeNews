@@ -9,8 +9,8 @@ from torch_geometric.nn import DataParallel
 from torch.nn import Linear
 from torch_geometric.nn import global_mean_pool, GATConv
 
-from data_loader import *
-from eval_helper import *
+from utils.data_loader import *
+from utils.eval_helper import *
 
 
 """
@@ -95,7 +95,7 @@ parser = argparse.ArgumentParser()
 
 # original model parameters
 parser.add_argument('--seed', type=int, default=777, help='random seed')
-parser.add_argument('--device', type=str, default='cuda:0', help='specify cuda devices')
+parser.add_argument('--device', type=str, default='cpu', help='specify cuda devices')
 
 # hyper-parameters
 parser.add_argument('--dataset', type=str, default='politifact', help='[politifact, gossipcop]')

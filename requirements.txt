@@ -3,4 +3,6 @@ scikit-learn>=0.22.1
 tqdm>=4.31.1
 numpy>=1.19.4
 scipy>=1.5.2
-torch==2.1.0
+torch==2.0.1
+torch_geometric==2.4.0
+
